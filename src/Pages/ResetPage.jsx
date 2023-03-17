@@ -21,10 +21,12 @@ const ResetPage = () => {
           setLoading(false);
         })
         .catch((err) => {
-          toast.error("error in request", err);
+          toast.error("Looks like your token got expired! Please try again.");
+          setLoading(false);
         });
     } else {
       toast.error("passwords did not mathced");
+      setLoading(false);
     }
   };
   return (
